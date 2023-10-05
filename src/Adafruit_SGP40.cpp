@@ -160,7 +160,7 @@ uint16_t Adafruit_SGP40::measureRaw(float temperature, float humidity) {
   command[7] = generateCRC(command + 5, 2);
   ;
 
-  if (!readWordFromCommand(command, 8, 250, &reply, 1))
+  if (!readWordFromCommand(command, 8, 30, &reply, 1))
     return 0x0;
 
   return reply;
